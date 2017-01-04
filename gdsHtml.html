@@ -1,0 +1,90 @@
+<form id="pesquisa_voo" action="http://127.0.0.1:3000/gds/v1/searchflight" method="POST" runat="server">
+   <div class="col_6 column">
+      <input type="radio" onclick="hideMe('div1', this)" name="tipoVoo" id="tipo-viagem" value="RoundTrip" checked="checked" class="radio">
+      <label for="tipo-viagem" class="inline"><b>Ida e Volta</b></label>
+   </div>
+   <div class="col_6 column">
+      <input type="radio" onclick="showMe('div1', this)" name="tipoVoo" id="tipo-viagem" value="OneWay" class="radio">
+      <label for="tipo-viagem" class="inline"><b>Ida</b></label>
+   </div>
+   <div class="col_12 column">
+      <label style="padding-left:2px;" for="de"><b>De:</b></label><br>
+      <input style="width:250px;" id="origem" name="origem" required="" type="text" class="col_12 ui-autocomplete-input column" autocomplete="off">
+   </div>
+   <div class="col_12 column">
+      <label style="padding-left:2px;" for="para"><b>Para:</b></label><br>
+      <input style="width:250px;" id="destino" name="destino" required="" type="text" class="col_12 ui-autocomplete-input column" autocomplete="off">
+   </div>
+   <div class="col_12 column" style="padding:0; width:100%">
+      <div class="col_6 input-append date column">
+         <label><b>Partida:</b></label>
+         <input name="dataPartida" id="dateinicio" required="" data-format="yyy/mm/dd" type="date" class="col_11 calendar column">
+         <!--span style="float:right;" class="add-on"><i style="float:right" class="icon-calendar"></i></span-->
+      </div>
+      <div align="right" id="div1" class="col_6 input-append date column">
+         <div style="padding-right:41px;"><label for="dataRegresso"><b>Regresso:</b></label></div>
+         <input name="dataRegresso" data-format="yyy/mm/dd" id="datefim" type="date" class="col_11 calendar column">
+         <!--span class="add-on"><i style="float:right"  class="icon-calendar"></i></span-->
+      </div>
+   </div>
+   <div class="col_4 select column">
+      <label for="adultos">Adultos:</label><br>
+      <label><font style="font-weight: normal;" size="2">(&gt;12 anos)</font></label> 
+      <select style="width:60px;" id="adultos" name="adultos" class="col_12 column">
+         <option value="0">0</option>
+         <option value="1" selected="">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+         <option value="7">7</option>
+         <option value="8">8</option>
+         <option value="9">9</option>
+      </select>
+   </div>
+   <div align="center" class="col_4 select column">
+      <label for="criancas">Crianças:</label><br>
+      <label><font style="font-weight: normal;" size="2">(2-12 anos)</font></label>
+      <select style="width:60px;" id="criancas" name="criancas" class="col_12 column">
+         <option value="0">0</option>
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+         <option value="7">7</option>
+         <option value="8">8</option>
+         <option value="9">9</option>
+      </select>
+   </div>
+   <div align="right" class="col_4 select column">
+      <label style="padding-right:13px;" for="bebes">Bébés:</label><br> 
+      <label><font style="font-weight: normal; padding-right:5px;" size="2">(0-2 anos)</font></label>
+      <select style="width:60px;" id="bebes" name="bebes" class="col_12 column">
+         <option value="0">0</option>
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+         <option value="7">7</option>
+         <option value="8">8</option>
+         <option value="9">9</option>
+      </select>
+   </div>
+   <div class="col_12 column">
+      <div class="clear">&nbsp;</div>
+      <hr>
+      <div style="line-height: 1.5em;font-size:10px" class="col_4 column">
+         Powered by  <a href="http://www.amadeus.com" target="_blank">Amadeus CWA</a>
+      </div>
+      <div class="col_8 right column">
+         <input type="hidden" name="tipo" value="Voo">
+         <input type="hidden" name="txtLocal" value="pesquisaVoo">
+         <button type="submit" class="orange" name="btPesquisaVoo">Pesquisar &nbsp;&nbsp; <i class="icon-search"></i></button>
+      </div>
+   </div>
+</form>
